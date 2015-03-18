@@ -12,9 +12,9 @@ namespace Point
         public Point3D(double xCoord, double yCoord, double zCoord)
             : this()
         {
-            this.x = xCoord;
-            this.y = yCoord;
-            this.z = zCoord;
+            this.X = xCoord;
+            this.Y = yCoord;
+            this.Z = zCoord;
         }
 
         static Point3D()
@@ -34,7 +34,7 @@ namespace Point
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}", this.x, this.y, this.z);
+            return string.Format("{0} {1} {2}", this.X, this.Y, this.Z);
         }
     }
 }
