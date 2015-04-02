@@ -141,6 +141,49 @@ namespace Generic
             return -1;
         }
 
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+
+            for (int i = 0; i < this.Elements.Length; i++)
+            {
+                builder.AppendFormat("On position {0} is {1}", i, this.Elements[i]);
+                builder.AppendLine();
+            }
+
+            return builder.ToString();
+        }
+
+        public T Max()
+        {
+            T max = this.Elements[0];
+
+            for (int i = 1; i < this.Elements.Length; i++)
+            {
+                if (max.CompareTo(this.Elements[i]) < 0)
+                {
+                    max = this.Elements[i];
+                }
+            }
+
+            return max;
+        }
+
+        public T Min()
+        {
+            T min = this.Elements[0];
+
+            for (int i = 1; i < this.Elements.Length; i++)
+            {
+                if (min.CompareTo(this.Elements[i]) > 0)
+                {
+                    min = this.Elements[i];
+                }
+            }
+
+            return min;
+        }
+
         private void AutoGrow()
         {
             int newCapacity = capacity * 2;
